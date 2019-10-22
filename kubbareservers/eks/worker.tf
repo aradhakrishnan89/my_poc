@@ -17,3 +17,7 @@ resource "aws_instance" "kubworker" {
   }
  
 }
+
+output "worker-ips" {
+  value = "${aws_instance.kubworker.*.public_ip}"
+}

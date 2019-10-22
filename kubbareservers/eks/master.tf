@@ -24,4 +24,7 @@ resource "aws_instance" "master" {
  
 }
 
+output "master-ip" {
+  value = "${aws_instance.master.*.public_ip}"
+}
 
