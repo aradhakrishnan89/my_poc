@@ -39,7 +39,7 @@ resource "aws_security_group_rule" "jenkins-poc-worker-ingress-cluster" {
 }
 
 resource "aws_security_group_rule" "jenkins-poc-ingress-ssh-worker" {
-  cidr_blocks       = ["0.0.0.0/32"]
+  cidr_blocks       = ["0.0.0.0/0"]
   description       = "Allow workstation to communicate to ssh to worker"
   from_port         = 0
   protocol          = -1
