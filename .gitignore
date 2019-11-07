@@ -1,0 +1,5 @@
+# Ignore tfstatefile
+*.tfstate
+
+#ignore plugin file 
+/Users/npaa/bejoyjenkins/my_poc/kubbareservers/eks/.terraform/*
