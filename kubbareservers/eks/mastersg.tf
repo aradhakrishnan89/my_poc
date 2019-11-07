@@ -19,7 +19,7 @@ resource "aws_security_group" "jenkins-poc-master" {
 #           to the Kubernetes. You will need to replace A.B.C.D below with
 #           your real IP. Services like icanhazip.com can help you find this.
 resource "aws_security_group_rule" "jenkins-poc-ingress-workstation-https" {
-  cidr_blocks       = ["0.0.0.0/32"]
+  cidr_blocks       = ["0.0.0.0/0"]
   description       = "Allow workstation to communicate with the cluster API Server"
   from_port         = 443
   protocol          = "tcp"
@@ -39,7 +39,7 @@ resource "aws_security_group_rule" "jenkins-poc-master-ingress-node-https" {
 }
 
 resource "aws_security_group_rule" "jenkins-poc-ingress-ssh-master" {
-  cidr_blocks       = ["0.0.0.0/32"]
+  cidr_blocks       = ["0.0.0.0/0"]
   description       = "Allow workstation to communicate to ssh to master"
   from_port         = 0
   protocol          = -1
